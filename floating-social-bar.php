@@ -3,7 +3,7 @@
 Plugin Name: AA's Digg Digg Alternative
 Plugin URI: http://www.android-advice.com/2012/faster-seo-friendly-digg-digg-alternative-wordpress-plugin/
 Description: Floating social bar for those that don't want to use the content heavy and slow Digg Digg bar.  This bar only has the code required to create the floating bar with sharing to increase page speed and less code.
-Version: 1.0
+Version: 1.0.1
 Author: Brandon Orndorff
 Author URI: http://www.android-advice.com
 License: GPL2
@@ -44,6 +44,8 @@ class Mokis_Digg_Alt_Controller {
 }
 
 function moki_add_social_content($content) {
+	global $wpdb;
+	if ( is_single() ){
 	?>
 <div style="-moz-border-radius: 10px; border-radius: 10px; border:1px solid #999999; position: fixed; z-index:99999; width: 70px; background-color:#FFFFFF; display:block; margin-left: <?php echo get_option('mokis_social_data_left'); ?>px; margin-top: <?php echo get_option('mokis_social_data_top'); ?>px;">
 <div style="width:68px;margin: auto; padding:0 0 5px 0; text-align:center;">
@@ -71,8 +73,10 @@ function moki_add_social_content($content) {
 </div>
 </div>
 <?php
+} //end if is_single
 return $content;
-}
+
+} //end function
 
 add_filter ('the_content', 'moki_add_social_content', 0);
 ?>

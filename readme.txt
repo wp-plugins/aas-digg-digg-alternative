@@ -2,7 +2,7 @@
 Tags: social, share, dig, Facebook, twitter, stumble, gplus, google plus, social sharing, toolbar, floating bar, social plugin, social share, google+, dig dig, stumble upon, twitter share, Facebook like, twitter follow, dig dig, social floater, static social sharing, simple dig digg
 Requires at least: 3.0.1
 Tested up to: 3.4
-Stable tag: 1.0
+Stable tag: 1.0.1
 Contributors: Brandon_Orndorff
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -47,6 +47,9 @@ If you have any questions please visit [Android Advice Plugin Page](http://www.a
 Visit Android Advice and view a post to see the Toolbar in action - [Android Advice Plugin Homepage](http://www.android-advice.com/ "Digg Digg Alternative")
 
 == Changelog ==
+
+= 1.0.1 =
+* Fixed a bug where it was showing the toolbar on many pages more than one time.  Some themes had this issue others did not.
 
 = 1.0 =
 * First Release.
