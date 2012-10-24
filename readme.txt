@@ -1,0 +1,52 @@
+=== AA's Digg Digg Alternative ===
+Tags: social, share, dig, Facebook, twitter, stumble, gplus, google plus, social sharing, toolbar, floating bar, social plugin, social share, google+, dig dig, stumble upon, twitter share, Facebook like, twitter follow, dig dig, social floater, static social sharing, simple dig digg
+Requires at least: 3.0.1
+Tested up to: 3.4
+Stable tag: 1.0
+Contributors: Brandon_Orndorff
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Digg Digg Alternative that uses less code and loads much faster.  Floating toolbar that is SEO friendly and customizable.
+
+== Description ==
+
+The AA Digg Digg Alternative is a floating toolbar for your Wordpress website that is lightweight and clean.  The reason for this plugin is Digg Digg was causing many speed issues with our website "Android Advice & Tutorials" so we decided to create our own.  After doing so we received requests by others for our toolbar.  The result is a plugin available to all.
+
+We ran speed tests using the Digg Digg social plugin and our own and every website it was tested on came up with better results using our Digg Digg alternative than the Digg Digg bar itself.
+
+Benefits of Our Toolbar over Digg Digg:
+	* Faster load time
+	* Cleaner code
+	* Substantially less code
+	* Easy to customize
+	* Less settings to run through to get it working
+
+If you have questions about the toolbar, bug reports, or feature requests (like other sharing services) we will hear you out and make changes hopefully quickly.  We will be adding other networks although wanted to release this for testing first.
+
+== Installation ==
+
+1. Upload the plugin to the `/wp-content/plugins/` directory
+2. Activate the plugin through the 'Plugins' menu in WordPress
+3. Choose your options via "Settings -> Digg Digg Alternative"
+
+== Frequently Asked Questions ==
+
+= My Toolbar is not Floating where I want it to?  =
+
+If you go to the settings for the toolbar "settings -> dig digg alternative" you will see location settings.  You need to change those numbers to move the toolbar around. (i.e. changing left margin from -90 to -100 will move it further left by 10 pixels, changing top margin from -50 to -40 will move it to the right 10 pixels)
+
+= Why are there only 5 social platforms? =
+
+We created the toolbar for our own website originally and decided to release it, we only needed those 5.  We will be adding other networks now that its released based on user feedback and requests.
+
+If you have any questions please visit [Android Advice Plugin Page](http://www.android-advice.com/2012/faster-seo-friendly-digg-digg-alternative-wordpress-plugin/ "Digg Digg Alternative") and leave them in the comments.
+
+== Demo ==
+
+Visit Android Advice and view a post to see the Toolbar in action - [Android Advice Plugin Homepage](http://www.android-advice.com/ "Digg Digg Alternative")
+
+== Changelog ==
+
+= 1.0 =
+* First Release.
