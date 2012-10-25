@@ -3,7 +3,7 @@
 Plugin Name: AA's Digg Digg Alternative
 Plugin URI: http://www.android-advice.com/2012/faster-seo-friendly-digg-digg-alternative-wordpress-plugin/
 Description: Floating social bar for those that don't want to use the content heavy and slow Digg Digg bar.  This bar only has the code required to create the floating bar with sharing to increase page speed and less code.
-Version: 1.1
+Version: 1.2
 Author: Brandon Orndorff
 Author URI: http://www.android-advice.com
 License: GPL2
@@ -24,7 +24,9 @@ class Mokis_Digg_Alt_Controller {
 		add_option("mokis_show_digg", '1', '', 'yes');
 		add_option("mokis_show_twitter", '1', '', 'yes');
 		add_option("mokis_show_facebook", '1', '', 'yes');
-		add_option("mokis_show_stumble", '1', '', 'yes');
+		add_option("mokis_show_stumble", '', '', 'yes');
+		add_option("mokis_show_linkedin", '', '', 'yes');
+		add_option("mokis_show_pinterest", '', '', 'yes');
 		add_option("mokis_social_data_posts", '1', '', 'yes');
 		add_option("mokis_social_data_pages", '', '', 'yes');
 	}
@@ -35,6 +37,8 @@ class Mokis_Digg_Alt_Controller {
 		add_option("mokis_social_data_pages", '', '', 'yes');
 		add_option("mokis_social_data_left_pages", '-90', '', 'yes');
 		add_option("mokis_social_data_top_pages", '-50', '', 'yes');
+		add_option("mokis_show_linkedin", '', '', 'yes');
+		add_option("mokis_show_pinterest", '', '', 'yes');
 	}
 
 	function deactivate() {
@@ -49,6 +53,8 @@ class Mokis_Digg_Alt_Controller {
 		delete_option('mokis_show_twitter');
 		delete_option('mokis_show_facebook');
 		delete_option('mokis_show_stumble');
+		delete_option('mokis_show_linkedin');
+		delete_option('mokis_show_pinterest');
 		delete_option('mokis_social_data_posts');
 		delete_option('mokis_social_data_pages');
 		delete_option('mokis_social_data_left_pages');
@@ -84,12 +90,16 @@ function moki_add_social_content($content) {
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(li, s);
   })();
 </script></span><?php } ?>
-<?php if(get_option('mokis_social_data_credit') == 1){ ?><span style="padding-top:5px; display:block;"><a href="http://www.android-advice.com" target="_blank" title="Android News, Tutorials, how to's, applications'" style="font-size:9px;">Powered By:<br />Android Advice</a></span><?php } ?>
+<?php if(get_option('mokis_show_linkedin') == 1){ ?><span style="padding-top:5px; display:block;"><script src="//platform.linkedin.com/in.js" type="text/javascript"></script><script type="IN/Share" data-counter="top"></script></span><?php } ?>
+<?php if(get_option('mokis_show_pinterest') == 1){ ?><span style="padding-top:5px; display:block;"><a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php if(function_exists('the_post_thumbnail')) echo wp_get_attachment_url(get_post_thumbnail_id()); ?>&description=<?php echo get_the_title(); ?>" class="pin-it-button" count-layout="vertical">Pin It</a><script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script></span><?php } ?>
+<?php if(get_option('mokis_social_data_credit') == 1){ ?><span style="line-height:10px;padding-top:5px; display:block;"><a href="http://www.android-advice.com" target="_blank" title="Android News, Tutorials, how to's, applications'" style="font-size:9px;">Powered By:<br />Android Advice</a></span><?php } ?>
 </div>
 </div>
 <?php
 } //end if is_single
+?>
 
+<?php
 //Start if is Page
 	if ( is_page() && get_option('mokis_social_data_pages') == 1 ){
 	?>
@@ -115,7 +125,9 @@ function moki_add_social_content($content) {
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(li, s);
   })();
 </script></span><?php } ?>
-<?php if(get_option('mokis_social_data_credit') == 1){ ?><span style="padding-top:5px; display:block;"><a href="http://www.android-advice.com" target="_blank" title="Android News, Tutorials, how to's, applications'" style="font-size:9px;">Powered By:<br />Android Advice</a></span><?php } ?>
+<?php if(get_option('mokis_show_linkedin') == 1){ ?><span style="padding-top:5px; display:block;"><script src="//platform.linkedin.com/in.js" type="text/javascript"></script><script type="IN/Share" data-counter="top"></script></span><?php } ?>
+<?php if(get_option('mokis_show_pinterest') == 1){ ?><span style="padding-top:5px; display:block;"><a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php if(function_exists('the_post_thumbnail')) echo wp_get_attachment_url(get_post_thumbnail_id()); ?>&description=<?php echo get_the_title(); ?>" class="pin-it-button" count-layout="vertical">Pin It</a><script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script></span><?php } ?>
+<?php if(get_option('mokis_social_data_credit') == 1){ ?><span style="line-height:10px;padding-top:5px; display:block;"><a href="http://www.android-advice.com" target="_blank" title="Android News, Tutorials, how to's, applications'" style="font-size:9px;">Powered By:<br />Android Advice</a></span><?php } ?>
 </div>
 </div>
 <?php

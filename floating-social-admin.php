@@ -9,6 +9,8 @@ if(isset($_POST['mokis_social_data_left'])){
 	update_option('mokis_show_twitter', $_POST['mokis_show_twitter']);
 	update_option('mokis_show_facebook', $_POST['mokis_show_facebook']);
 	update_option('mokis_show_stumble', $_POST['mokis_show_stumble']);
+	update_option('mokis_show_linkedin', $_POST['mokis_show_linkedin']);
+	update_option('mokis_show_pinterest', $_POST['mokis_show_pinterest']);
 	update_option('mokis_social_data_posts', $_POST['mokis_social_data_posts']);
 	update_option('mokis_social_data_pages', $_POST['mokis_social_data_pages']);
 	update_option('mokis_social_data_credit', $_POST['mokis_social_data_credit']);
@@ -59,12 +61,15 @@ if(isset($_POST['mokis_social_data_left'])){
 			 if(get_option('mokis_show_twitter') == 1) {$twitterchecked = checked;}
 			 if(get_option('mokis_show_facebook') == 1) {$facebookchecked = checked;}
 			 if(get_option('mokis_show_stumble') == 1) {$stumblechecked = checked;}
+			 if(get_option('mokis_show_linkedin') == 1) {$linkedinchecked = checked;}
+			 if(get_option('mokis_show_pinterest') == 1) {$pinterestchecked = checked;}
 			 if(get_option('mokis_social_data_posts') == 1) {$postsshowchecked = checked;}
 			 if(get_option('mokis_social_data_pages') == 1) {$pagesshowchecked = checked;}
 			 if(get_option('mokis_social_data_credit') == 1) {$creditchecked = checked;}
              ?>
              
              <h2>Social Display Settings:</h2>
+             <h3>We recommend no more than 5 sharing options for SEO although to each his own :)</h3>
              <label for="mokis_show_googleplus">
                  <p><input type="checkbox" name="mokis_show_googleplus" value="1" <?php echo $gpluschecked; ?> /> :<b>Google Plus</b> - Check this box to show Google Plus on your Floating bar.</p>
              </label>
@@ -79,6 +84,12 @@ if(isset($_POST['mokis_social_data_left'])){
              </label>
              <label for="mokis_show_stumble">
                  <p><input type="checkbox" name="mokis_show_stumble" value="1" <?php echo $stumblechecked; ?> /> :<b>Stumble</b> - Check this box to show Stumble on your Floating bar.</p>
+             </label>
+             <label for="mokis_show_linkedin">
+                 <p><input type="checkbox" name="mokis_show_linkedin" value="1" <?php echo $linkedinchecked; ?> /> :<b>LinkedIn</b> - Check this box to show LinkedIn on your Floating bar.</p>
+             </label>
+             <label for="mokis_show_pinterest">
+                 <p><input type="checkbox" name="mokis_show_pinterest" value="1" <?php echo $pinterestchecked; ?> /> :<b>Pinterest</b> - Check this box to show Pinterest on your Floating bar.</p>
              </label>
              More Social Networks will be added shortly (we are going through extensive testing and implementing lazy loading first)
              
