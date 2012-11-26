@@ -2,7 +2,7 @@
 Tags: social, share, dig, Facebook, twitter, stumble, gplus, google plus, social sharing, toolbar, floating bar, social plugin, social share, google+, dig dig, stumble upon, twitter share, Facebook like, twitter follow, dig dig, social floater, static social sharing, simple dig digg
 Requires at least: 3.0.1
 Tested up to: 3.4
-Stable tag: 1.2
+Stable tag: 1.3
 Contributors: Brandon_Orndorff
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -34,11 +34,7 @@ If you have questions about the toolbar, bug reports, or feature requests (like 
 
 = My Toolbar is not Floating where I want it to?  =
 
-If you go to the settings for the toolbar "settings -> dig digg alternative" you will see location settings.  You need to change those numbers to move the toolbar around. (i.e. changing left margin from -90 to -100 will move it further left by 10 pixels, changing top margin from -50 to -40 will move it to the right 10 pixels)
-
-= Why are there only 5 social platforms? =
-
-We created the toolbar for our own website originally and decided to release it, we only needed those 5.  We will be adding other networks now that its released based on user feedback and requests.
+If you go to the settings for the toolbar "settings -> dig digg alternative" you will see location settings.  You need to change those numbers to move the toolbar around. (i.e. changing the first number from 500 to 550 will move it further left by 50 pixels, changing the second number from 50 to 60 will move it down 10 pixels)
 
 If you have any questions please visit [Android Advice Plugin Page](http://www.android-advice.com/2012/faster-seo-friendly-digg-digg-alternative-wordpress-plugin/ "Digg Digg Alternative") and leave them in the comments.
 
@@ -47,6 +43,11 @@ If you have any questions please visit [Android Advice Plugin Page](http://www.a
 Visit Android Advice and view a post to see the Toolbar in action - [Android Advice Plugin Homepage](http://www.android-advice.com/ "Digg Digg Alternative")
 
 == Changelog ==
+
+= 1.3 =
+* Added the ability to show floating bar on your homepage.
+* fixed bar showing multiple times on a single page by removing the content filter and adding wp_head action.
+*NOTE: locations will now be changed so before updating be sure you have time to reposition the bar.
 
 = 1.2 =
 * Added LinkedIn and Pinterest to the list of social networks to choose from along with some minor Facebook bug fixes and CSS improvements.

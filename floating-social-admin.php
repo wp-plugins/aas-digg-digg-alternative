@@ -4,6 +4,8 @@ if(isset($_POST['mokis_social_data_left'])){
 	update_option('mokis_social_data_top', $_POST['mokis_social_data_top']);
 	update_option('mokis_social_data_left_pages', $_POST['mokis_social_data_left_pages']);
 	update_option('mokis_social_data_top_pages', $_POST['mokis_social_data_top_pages']);
+	update_option('mokis_social_data_left_home', $_POST['mokis_social_data_left_home']);
+	update_option('mokis_social_data_top_home', $_POST['mokis_social_data_top_home']);
 	update_option('mokis_show_googleplus', $_POST['mokis_show_googleplus']);
 	update_option('mokis_show_digg', $_POST['mokis_show_digg']);
 	update_option('mokis_show_twitter', $_POST['mokis_show_twitter']);
@@ -13,6 +15,7 @@ if(isset($_POST['mokis_social_data_left'])){
 	update_option('mokis_show_pinterest', $_POST['mokis_show_pinterest']);
 	update_option('mokis_social_data_posts', $_POST['mokis_social_data_posts']);
 	update_option('mokis_social_data_pages', $_POST['mokis_social_data_pages']);
+	update_option('mokis_social_data_home', $_POST['mokis_social_data_home']);
 	update_option('mokis_social_data_credit', $_POST['mokis_social_data_credit']);
 	
 	$mokisfloatsuccess = "Settings Updated Successfully!";
@@ -39,18 +42,26 @@ if(isset($_POST['mokis_social_data_left'])){
 		 	<h2>Post/Page Location Settings:</h2>
 		 	<h3 style="padding:0;margin:0;">Posts - location on posts</h3>
              <label for="msf_float_left">
-                 <p><input type="text" name="mokis_social_data_left" value="<?php echo get_option('mokis_social_data_left'); ?>" style="width:40px;" /> :<b>Left Margin (pixels)</b> - How far left from your content you want the bar to float.</p>
+                 <p><input type="text" name="mokis_social_data_left" value="<?php echo get_option('mokis_social_data_left'); ?>" style="width:40px;" /> :<b>From Center of Page (pixels)</b> - Higher number moves bar to the left lower number to the right.</p>
              </label>
              <label for="mokis_social_data_top">
-                 <p><input type="text" name="mokis_social_data_top" value="<?php echo get_option('mokis_social_data_top'); ?>" style="width:40px;" /> :<b>Top Margin (pixels)</b> - How far up from your content you want the bar to float.</p>
+                 <p><input type="text" name="mokis_social_data_top" value="<?php echo get_option('mokis_social_data_top'); ?>" style="width:40px;" /> :<b>From Top of Page (pixels)</b> - Higher number moves bar down lower number up.</p>
              </label>
              <br />
              <h3 style="padding:0;margin:0;">Pages - location on pages</h3>
              <label for="msf_float_left_pages">
-                 <p><input type="text" name="mokis_social_data_left_pages" value="<?php echo get_option('mokis_social_data_left_pages'); ?>" style="width:40px;" /> :<b>Left Margin (pixels)</b> - How far left from your content you want the bar to float.</p>
+                 <p><input type="text" name="mokis_social_data_left_pages" value="<?php echo get_option('mokis_social_data_left_pages'); ?>" style="width:40px;" /> :<b>From Center of Page (pixels)</b> - Higher number moves bar to the left lower number to the right.</p>
              </label>
              <label for="mokis_social_data_top_pages">
-                 <p><input type="text" name="mokis_social_data_top_pages" value="<?php echo get_option('mokis_social_data_top_pages'); ?>" style="width:40px;" /> :<b>Top Margin (pixels)</b> - How far up from your content you want the bar to float.</p>
+                 <p><input type="text" name="mokis_social_data_top_pages" value="<?php echo get_option('mokis_social_data_top_pages'); ?>" style="width:40px;" /> :<b>From Top of Page (pixels)</b> - Higher number moves bar down lower number up.</p>
+             </label>
+             <br />
+             <h3 style="padding:0;margin:0;">Home Page - location on homepage</h3>
+             <label for="msf_float_left_pages">
+                 <p><input type="text" name="mokis_social_data_left_home" value="<?php echo get_option('mokis_social_data_left_home'); ?>" style="width:40px;" /> :<b>From Center of Page (pixels)</b> - Higher number moves bar to the left lower number to the right.</p>
+             </label>
+             <label for="mokis_social_data_top_pages">
+                 <p><input type="text" name="mokis_social_data_top_home" value="<?php echo get_option('mokis_social_data_top_home'); ?>" style="width:40px;" /> :<b>From Top of Page (pixels)</b> - Higher number moves bar down lower number up.</p>
              </label>
              
              <hr />
@@ -65,6 +76,7 @@ if(isset($_POST['mokis_social_data_left'])){
 			 if(get_option('mokis_show_pinterest') == 1) {$pinterestchecked = checked;}
 			 if(get_option('mokis_social_data_posts') == 1) {$postsshowchecked = checked;}
 			 if(get_option('mokis_social_data_pages') == 1) {$pagesshowchecked = checked;}
+			 if(get_option('mokis_social_data_home') == 1) {$homeshowchecked = checked;}
 			 if(get_option('mokis_social_data_credit') == 1) {$creditchecked = checked;}
              ?>
              
@@ -101,6 +113,9 @@ if(isset($_POST['mokis_social_data_left'])){
              </label>
              <label for="mokis_social_data_pages">
                  <p><input type="checkbox" name="mokis_social_data_pages" value="1" <?php echo $pagesshowchecked; ?> /> :<b>Pages</b> - Check this box to show the floating social bar on pages.</p>
+             </label>
+             <label for="mokis_social_data_home">
+                 <p><input type="checkbox" name="mokis_social_data_home" value="1" <?php echo $homeshowchecked; ?> /> :<b>Homepage</b> - Check this box to show the floating social bar on homepage.</p>
              </label>
              
              <hr />
