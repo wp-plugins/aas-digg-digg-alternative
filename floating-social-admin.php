@@ -16,6 +16,10 @@ if(isset($_POST['mokis_social_data_left'])){
 	update_option('mokis_social_data_posts', $_POST['mokis_social_data_posts']);
 	update_option('mokis_social_data_pages', $_POST['mokis_social_data_pages']);
 	update_option('mokis_social_data_home', $_POST['mokis_social_data_home']);
+	update_option('mokis_social_bgcolor', $_POST['mokis_social_bgcolor']);
+	update_option('mokis_social_border_color', $_POST['mokis_social_border_color']);
+	update_option('mokis_social_ignore_posts', $_POST['mokis_social_ignore_posts']);
+	update_option('mokis_social_ignore_pages', $_POST['mokis_social_ignore_pages']);
 	update_option('mokis_social_data_credit', $_POST['mokis_social_data_credit']);
 	
 	$mokisfloatsuccess = "Settings Updated Successfully!";
@@ -66,6 +70,16 @@ if(isset($_POST['mokis_social_data_left'])){
              
              <hr />
              
+             <h2>Custom Style Settings:</h2>
+             <label for="mokis_social_bgcolor">
+                 <p><input type="text" name="mokis_social_bgcolor" value="<?php echo get_option('mokis_social_bgcolor'); ?>" style="width:100px;" /> :<b>Floating Bar Background Color (HEX i.e #FFFFFF for white)</b></p>
+             </label>
+             <label for="mokis_social_border_color">
+                 <p><input type="text" name="mokis_social_border_color" value="<?php echo get_option('mokis_social_border_color'); ?>" style="width:100px;" /> :<b>Floating Bar Border Color (HEX i.e #999999 for gray)</b></p>
+             </label>
+             
+             <hr />
+             
              <?php
              if(get_option('mokis_show_googleplus') == 1) {$gpluschecked = checked;}
 			 if(get_option('mokis_show_digg') == 1) {$diggchecked = checked;}
@@ -80,7 +94,7 @@ if(isset($_POST['mokis_social_data_left'])){
 			 if(get_option('mokis_social_data_credit') == 1) {$creditchecked = checked;}
              ?>
              
-             <h2>Social Display Settings:</h2>
+             <h2>Social Network Display Settings:</h2>
              <h3>We recommend no more than 5 sharing options for SEO although to each his own :)</h3>
              <label for="mokis_show_googleplus">
                  <p><input type="checkbox" name="mokis_show_googleplus" value="1" <?php echo $gpluschecked; ?> /> :<b>Google Plus</b> - Check this box to show Google Plus on your Floating bar.</p>
@@ -111,8 +125,14 @@ if(isset($_POST['mokis_social_data_left'])){
              <label for="mokis_social_data_posts">
                  <p><input type="checkbox" name="mokis_social_data_posts" value="1" <?php echo $postsshowchecked; ?> /> :<b>Posts</b> - Check this box to show the floating social bar on posts.</p>
              </label>
+             <label for="mokis_social_ignore_posts">
+                 <p><input type="text" name="mokis_social_ignore_posts" value="<?php echo get_option('mokis_social_ignore_posts'); ?>" style="width:200px;" /> :<b>Posts to Ignore (post id)</b> - seperate ids with commas i.e. 1,2,3</p>
+             </label>
              <label for="mokis_social_data_pages">
                  <p><input type="checkbox" name="mokis_social_data_pages" value="1" <?php echo $pagesshowchecked; ?> /> :<b>Pages</b> - Check this box to show the floating social bar on pages.</p>
+             </label>
+             <label for="mokis_social_ignore_pages">
+                 <p><input type="text" name="mokis_social_ignore_pages" value="<?php echo get_option('mokis_social_ignore_pages'); ?>" style="width:200px;" /> :<b>Pages to Ignore (page id)</b> - seperate ids with commas i.e. 1,2,3</p>
              </label>
              <label for="mokis_social_data_home">
                  <p><input type="checkbox" name="mokis_social_data_home" value="1" <?php echo $homeshowchecked; ?> /> :<b>Homepage</b> - Check this box to show the floating social bar on homepage.</p>

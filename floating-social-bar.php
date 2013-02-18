@@ -3,7 +3,7 @@
 Plugin Name: AA's Digg Digg Alternative
 Plugin URI: http://www.android-advice.com/2012/faster-seo-friendly-digg-digg-alternative-wordpress-plugin/
 Description: Floating social bar for those that don't want to use the content heavy and slow Digg Digg bar.  This bar only has the code required to create the floating bar with sharing to increase page speed and less code.
-Version: 1.3
+Version: 1.4
 Author: Brandon Orndorff
 Author URI: http://www.android-advice.com
 License: GPL2
@@ -32,17 +32,18 @@ class Mokis_Digg_Alt_Controller {
 		add_option("mokis_social_data_posts", '1', '', 'yes');
 		add_option("mokis_social_data_pages", '', '', 'yes');
 		add_option("mokis_social_data_home", '', '', 'yes');
+		add_option("mokis_social_ignore_posts", '', '', 'yes');
+		add_option("mokis_social_ignore_pages", '', '', 'yes');
+		add_option("mokis_social_bgcolor", '#FFFFFF', '', 'yes');
+		add_option("mokis_social_border_color", '#999999', '', 'yes');
 	}
 	function activate() {
 		add_option("mokis_social_data_credit", '1', '', 'yes');
 		update_option('mokis_social_data_credit', '1');
-		add_option("mokis_social_data_home", '', '', 'yes');
-		add_option("mokis_social_data_left_home", '500', '', 'yes');
-		add_option("mokis_social_data_top_home", '50', '', 'yes');
-		update_option("mokis_social_data_left", '500');
-		update_option("mokis_social_data_top", '50');
-		update_option("mokis_social_data_left_pages", '500');
-		update_option("mokis_social_data_top_pages", '50');
+		add_option("mokis_social_ignore_posts", '', '', 'yes');
+		add_option("mokis_social_ignore_pages", '', '', 'yes');
+		add_option("mokis_social_bgcolor", '#FFFFFF', '', 'yes');
+		add_option("mokis_social_border_color", '#999999', '', 'yes');
 	}
 
 	function deactivate() {
@@ -66,6 +67,10 @@ class Mokis_Digg_Alt_Controller {
 		delete_option('mokis_social_data_top_pages');
 		delete_option('mokis_social_data_left_home');
 		delete_option('mokis_social_data_top_home');
+		delete_option('mokis_social_ignore_posts');
+		delete_option('mokis_social_ignore_pages');
+		delete_option('mokis_social_bgcolor');
+		delete_option('mokis_social_border_color');
 	}
 }
 
@@ -73,9 +78,11 @@ function moki_add_social_content($content) {
 		
 	global $wpdb;
 	//Start if is Post
-	if ( is_single() && get_option('mokis_social_data_posts') == 1 ){
+	$poststoignore = get_option('mokis_social_ignore_posts');
+	$poststoignore = explode( ',', $poststoignore );
+	if ( is_single() && get_option('mokis_social_data_posts') == 1 && !is_single( $poststoignore )){
 	?>
-<div style="-moz-border-radius: 10px; border-radius: 10px; border:1px solid #999999; position: fixed; z-index:99999; width: 70px; background-color:#FFFFFF; display:block; margin: 50%; right: <?php echo get_option('mokis_social_data_left'); ?>px; margin-top: <?php echo get_option('mokis_social_data_top'); ?>px;">
+<div style="-moz-border-radius: 10px; border-radius: 10px; border:1px solid <?php echo get_option('mokis_social_border_color'); ?>; position: fixed; z-index:99999; width: 70px; background-color:<?php echo get_option('mokis_social_bgcolor'); ?>; display:block; margin: 50%; right: <?php echo get_option('mokis_social_data_left'); ?>px; margin-top: <?php echo get_option('mokis_social_data_top'); ?>px;">
 <div style="width:68px;margin: auto; padding:0 0 5px 0; text-align:center;">
 <?php if(get_option('mokis_show_googleplus') == 1){ ?><span style="padding-top:5px; display:block;"><script type='text/javascript' src='https://apis.google.com/js/plusone.js'></script><g:plusone size='tall'></g:plusone></span><?php } ?>
 <?php if(get_option('mokis_show_digg') == 1){ ?><span style="padding-top:5px; display:block;"><script type='text/javascript'>(function() {var s = document.createElement('SCRIPT'), s1 = document.getElementsByTagName('SCRIPT')[0];s.type = 'text/javascript';s.async = true;s.src = 'http://widgets.digg.com/buttons.js';s1.parentNode.insertBefore(s, s1);})();</script> <a class='DiggThisButton DiggMedium' href='http://digg.com/submit'></a></span><?php } ?>
@@ -98,7 +105,7 @@ function moki_add_social_content($content) {
   })();
 </script></span><?php } ?>
 <?php if(get_option('mokis_show_linkedin') == 1){ ?><span style="padding-top:5px; display:block;"><script src="//platform.linkedin.com/in.js" type="text/javascript"></script><script type="IN/Share" data-counter="top"></script></span><?php } ?>
-<?php if(get_option('mokis_show_pinterest') == 1){ ?><span style="padding-top:5px; display:block;"><a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php if(function_exists('the_post_thumbnail')) echo wp_get_attachment_url(get_post_thumbnail_id()); ?>&description=<?php echo get_the_title(); ?>" class="pin-it-button" count-layout="vertical">Pin It</a><script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script></span><?php } ?>
+<?php if(get_option('mokis_show_pinterest') == 1){ ?><span style="padding-top:5px; display:block;"><br /><a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php if(function_exists('the_post_thumbnail')) echo wp_get_attachment_url(get_post_thumbnail_id()); ?>&description=<?php echo get_the_title(); ?>" class="pin-it-button" count-layout="vertical">Pin It</a><script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script></span><?php } ?>
 <?php if(get_option('mokis_social_data_credit') == 1){ ?><span style="line-height:10px;padding-top:5px; display:block;"><a href="http://www.android-advice.com" target="_blank" title="Android News, Tutorials, how to's, applications'" style="font-size:9px;">Powered By:<br />Android Advice</a></span><?php } ?>
 </div>
 </div>
@@ -108,9 +115,11 @@ function moki_add_social_content($content) {
 
 <?php
 //Start if is Page
-	if ( is_page() && get_option('mokis_social_data_pages') == 1 ){
+	$pagestoignore = get_option('mokis_social_ignore_pages');
+	$pagestoignore = explode( ',', $pagestoignore );
+	if ( is_page() && get_option('mokis_social_data_pages') == 1 && !is_page( $pagestoignore )){
 	?>
-<div style="-moz-border-radius: 10px; border-radius: 10px; border:1px solid #999999; position: fixed; z-index:99999; width: 70px; background-color:#FFFFFF; display:block; margin: 50%; right: <?php echo get_option('mokis_social_data_left_pages'); ?>px; margin-top: <?php echo get_option('mokis_social_data_top_pages'); ?>px;">
+<div style="-moz-border-radius: 10px; border-radius: 10px; border:1px solid <?php echo get_option('mokis_social_border_color'); ?>; position: fixed; z-index:99999; width: 70px; background-color:<?php echo get_option('mokis_social_bgcolor'); ?>; display:block; margin: 50%; right: <?php echo get_option('mokis_social_data_left_pages'); ?>px; margin-top: <?php echo get_option('mokis_social_data_top_pages'); ?>px;">
 <div style="width:68px;margin: auto; padding:0 0 5px 0; text-align:center;">
 <?php if(get_option('mokis_show_googleplus') == 1){ ?><span style="padding-top:5px; display:block;"><script type='text/javascript' src='https://apis.google.com/js/plusone.js'></script><g:plusone size='tall'></g:plusone></span><?php } ?>
 <?php if(get_option('mokis_show_digg') == 1){ ?><span style="padding-top:5px; display:block;"><script type='text/javascript'>(function() {var s = document.createElement('SCRIPT'), s1 = document.getElementsByTagName('SCRIPT')[0];s.type = 'text/javascript';s.async = true;s.src = 'http://widgets.digg.com/buttons.js';s1.parentNode.insertBefore(s, s1);})();</script> <a class='DiggThisButton DiggMedium' href='http://digg.com/submit'></a></span><?php } ?>
@@ -133,7 +142,7 @@ function moki_add_social_content($content) {
   })();
 </script></span><?php } ?>
 <?php if(get_option('mokis_show_linkedin') == 1){ ?><span style="padding-top:5px; display:block;"><script src="//platform.linkedin.com/in.js" type="text/javascript"></script><script type="IN/Share" data-counter="top"></script></span><?php } ?>
-<?php if(get_option('mokis_show_pinterest') == 1){ ?><span style="padding-top:5px; display:block;"><a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php if(function_exists('the_post_thumbnail')) echo wp_get_attachment_url(get_post_thumbnail_id()); ?>&description=<?php echo get_the_title(); ?>" class="pin-it-button" count-layout="vertical">Pin It</a><script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script></span><?php } ?>
+<?php if(get_option('mokis_show_pinterest') == 1){ ?><span style="padding-top:5px; display:block;"><br /><a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php if(function_exists('the_post_thumbnail')) echo wp_get_attachment_url(get_post_thumbnail_id()); ?>&description=<?php echo get_the_title(); ?>" class="pin-it-button" count-layout="vertical">Pin It</a><script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script></span><?php } ?>
 <?php if(get_option('mokis_social_data_credit') == 1){ ?><span style="line-height:10px;padding-top:5px; display:block;"><a href="http://www.android-advice.com" target="_blank" title="Android News, Tutorials, how to's, applications'" style="font-size:9px;">Powered By:<br />Android Advice</a></span><?php } ?>
 </div>
 </div>
@@ -145,7 +154,7 @@ function moki_add_social_content($content) {
 //Start if is Home
 	if ( is_home() && get_option('mokis_social_data_home') == 1 ){
 	?>
-<div style="-moz-border-radius: 10px; border-radius: 10px; border:1px solid #999999; position: fixed; z-index:99999; width: 70px; background-color:#FFFFFF; display:block; margin: 50%; right: <?php echo get_option('mokis_social_data_left_home'); ?>px; margin-top: <?php echo get_option('mokis_social_data_top_home'); ?>px;">
+<div style="-moz-border-radius: 10px; border-radius: 10px; border:1px solid <?php echo get_option('mokis_social_border_color'); ?>; position: fixed; z-index:99999; width: 70px; background-color:<?php echo get_option('mokis_social_bgcolor'); ?>; display:block; margin: 50%; right: <?php echo get_option('mokis_social_data_left_home'); ?>px; margin-top: <?php echo get_option('mokis_social_data_top_home'); ?>px;">
 <div style="width:68px;margin: auto; padding:0 0 5px 0; text-align:center;">
 <?php if(get_option('mokis_show_googleplus') == 1){ ?><span style="padding-top:5px; display:block;"><script type='text/javascript' src='https://apis.google.com/js/plusone.js'></script><g:plusone size='tall'></g:plusone></span><?php } ?>
 <?php if(get_option('mokis_show_digg') == 1){ ?><span style="padding-top:5px; display:block;"><script type='text/javascript'>(function() {var s = document.createElement('SCRIPT'), s1 = document.getElementsByTagName('SCRIPT')[0];s.type = 'text/javascript';s.async = true;s.src = 'http://widgets.digg.com/buttons.js';s1.parentNode.insertBefore(s, s1);})();</script> <a class='DiggThisButton DiggMedium' href='http://digg.com/submit'></a></span><?php } ?>
@@ -168,7 +177,7 @@ function moki_add_social_content($content) {
   })();
 </script></span><?php } ?>
 <?php if(get_option('mokis_show_linkedin') == 1){ ?><span style="padding-top:5px; display:block;"><script src="//platform.linkedin.com/in.js" type="text/javascript"></script><script type="IN/Share" data-counter="top"></script></span><?php } ?>
-<?php if(get_option('mokis_show_pinterest') == 1){ ?><span style="padding-top:5px; display:block;"><a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php if(function_exists('the_post_thumbnail')) echo wp_get_attachment_url(get_post_thumbnail_id()); ?>&description=<?php echo get_the_title(); ?>" class="pin-it-button" count-layout="vertical">Pin It</a><script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script></span><?php } ?>
+<?php if(get_option('mokis_show_pinterest') == 1){ ?><span style="padding-top:5px; display:block;"><br /><a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php if(function_exists('the_post_thumbnail')) echo wp_get_attachment_url(get_post_thumbnail_id()); ?>&description=<?php echo get_the_title(); ?>" class="pin-it-button" count-layout="vertical">Pin It</a><script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script></span><?php } ?>
 <?php if(get_option('mokis_social_data_credit') == 1){ ?><span style="line-height:10px;padding-top:5px; display:block;"><a href="http://www.android-advice.com" target="_blank" title="Android News, Tutorials, how to's, applications'" style="font-size:9px;">Powered By:<br />Android Advice</a></span><?php } ?>
 </div>
 </div>

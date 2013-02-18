@@ -1,8 +1,8 @@
 === AA's Digg Digg Alternative ===
 Tags: social, share, dig, Facebook, twitter, stumble, gplus, google plus, social sharing, toolbar, floating bar, social plugin, social share, google+, dig dig, stumble upon, twitter share, Facebook like, twitter follow, dig dig, social floater, static social sharing, simple dig digg
 Requires at least: 3.0.1
-Tested up to: 3.4
-Stable tag: 1.3
+Tested up to: 3.5
+Stable tag: 1.4
 Contributors: Brandon_Orndorff
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -43,6 +43,12 @@ If you have any questions please visit [Android Advice Plugin Page](http://www.a
 Visit Android Advice and view a post to see the Toolbar in action - [Android Advice Plugin Homepage](http://www.android-advice.com/ "Digg Digg Alternative")
 
 == Changelog ==
+
+= 1.4 =
+* Added the ability to customize toolbar colors (Border and Background Colors).
+* Added ability to exclude posts or pages by id's.
+* Fixed Pinterest button spacing
+* Minor Code cleanup and various non esthetic bug fixes
 
 = 1.3 =
 * Added the ability to show floating bar on your homepage.
