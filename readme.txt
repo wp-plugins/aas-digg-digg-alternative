@@ -2,7 +2,7 @@
 Tags: social, share, dig, Facebook, twitter, stumble, gplus, google plus, social sharing, toolbar, floating bar, social plugin, social share, google+, dig dig, stumble upon, twitter share, Facebook like, twitter follow, dig dig, social floater, static social sharing, simple dig digg
 Requires at least: 3.0.1
 Tested up to: 3.5
-Stable tag: 1.4
+Stable tag: 1.4.1
 Contributors: Brandon_Orndorff
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -43,6 +43,9 @@ If you have any questions please visit [Android Advice Plugin Page](http://www.a
 Visit Android Advice and view a post to see the Toolbar in action - [Android Advice Plugin Homepage](http://www.android-advice.com/ "Digg Digg Alternative")
 
 == Changelog ==
+
+= 1.4.1 =
+* Minor update to allow those with static homepages to show the bar on the homepage without having to activate it on all pages.
 
 = 1.4 =
 * Added the ability to customize toolbar colors (Border and Background Colors).

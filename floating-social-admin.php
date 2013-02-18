@@ -21,6 +21,7 @@ if(isset($_POST['mokis_social_data_left'])){
 	update_option('mokis_social_ignore_posts', $_POST['mokis_social_ignore_posts']);
 	update_option('mokis_social_ignore_pages', $_POST['mokis_social_ignore_pages']);
 	update_option('mokis_social_data_credit', $_POST['mokis_social_data_credit']);
+	update_option('mokis_social_static_homepage', $_POST['mokis_social_static_homepage']);
 	
 	$mokisfloatsuccess = "Settings Updated Successfully!";
 }
@@ -136,6 +137,9 @@ if(isset($_POST['mokis_social_data_left'])){
              </label>
              <label for="mokis_social_data_home">
                  <p><input type="checkbox" name="mokis_social_data_home" value="1" <?php echo $homeshowchecked; ?> /> :<b>Homepage</b> - Check this box to show the floating social bar on homepage.</p>
+             </label>
+             <label for="mokis_social_static_homepage">
+                 <p><input type="text" name="mokis_social_static_homepage" value="<?php echo get_option('mokis_social_static_homepage'); ?>" style="width:40px;" /> :<b>Homepage's page ID if using Static Home Page</b> - if not using set to -1 or all pages will show the bar (just for you pwizard :)</p>
              </label>
              
              <hr />

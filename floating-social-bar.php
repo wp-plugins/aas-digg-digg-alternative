@@ -3,7 +3,7 @@
 Plugin Name: AA's Digg Digg Alternative
 Plugin URI: http://www.android-advice.com/2012/faster-seo-friendly-digg-digg-alternative-wordpress-plugin/
 Description: Floating social bar for those that don't want to use the content heavy and slow Digg Digg bar.  This bar only has the code required to create the floating bar with sharing to increase page speed and less code.
-Version: 1.4
+Version: 1.4.1
 Author: Brandon Orndorff
 Author URI: http://www.android-advice.com
 License: GPL2
@@ -36,6 +36,7 @@ class Mokis_Digg_Alt_Controller {
 		add_option("mokis_social_ignore_pages", '', '', 'yes');
 		add_option("mokis_social_bgcolor", '#FFFFFF', '', 'yes');
 		add_option("mokis_social_border_color", '#999999', '', 'yes');
+		add_option("mokis_social_static_homepage", '-1', '', 'yes');
 	}
 	function activate() {
 		add_option("mokis_social_data_credit", '1', '', 'yes');
@@ -44,6 +45,7 @@ class Mokis_Digg_Alt_Controller {
 		add_option("mokis_social_ignore_pages", '', '', 'yes');
 		add_option("mokis_social_bgcolor", '#FFFFFF', '', 'yes');
 		add_option("mokis_social_border_color", '#999999', '', 'yes');
+		add_option("mokis_social_static_homepage", '-1', '', 'yes');
 	}
 
 	function deactivate() {
@@ -71,6 +73,7 @@ class Mokis_Digg_Alt_Controller {
 		delete_option('mokis_social_ignore_pages');
 		delete_option('mokis_social_bgcolor');
 		delete_option('mokis_social_border_color');
+		delete_option('mokis_social_static_homepage');
 	}
 }
 
@@ -117,7 +120,7 @@ function moki_add_social_content($content) {
 //Start if is Page
 	$pagestoignore = get_option('mokis_social_ignore_pages');
 	$pagestoignore = explode( ',', $pagestoignore );
-	if ( is_page() && get_option('mokis_social_data_pages') == 1 && !is_page( $pagestoignore )){
+	if ( is_page() && get_option('mokis_social_data_pages') == 1 && !is_page( $pagestoignore ) && !is_page( get_option('mokis_social_static_homepage') )){
 	?>
 <div style="-moz-border-radius: 10px; border-radius: 10px; border:1px solid <?php echo get_option('mokis_social_border_color'); ?>; position: fixed; z-index:99999; width: 70px; background-color:<?php echo get_option('mokis_social_bgcolor'); ?>; display:block; margin: 50%; right: <?php echo get_option('mokis_social_data_left_pages'); ?>px; margin-top: <?php echo get_option('mokis_social_data_top_pages'); ?>px;">
 <div style="width:68px;margin: auto; padding:0 0 5px 0; text-align:center;">
@@ -152,7 +155,7 @@ function moki_add_social_content($content) {
 
 <?php
 //Start if is Home
-	if ( is_home() && get_option('mokis_social_data_home') == 1 ){
+	if ( (is_home() && get_option('mokis_social_data_home') == 1) || ( is_page(get_option('mokis_social_static_homepage')) && get_option('mokis_social_data_home') == 1) ){
 	?>
 <div style="-moz-border-radius: 10px; border-radius: 10px; border:1px solid <?php echo get_option('mokis_social_border_color'); ?>; position: fixed; z-index:99999; width: 70px; background-color:<?php echo get_option('mokis_social_bgcolor'); ?>; display:block; margin: 50%; right: <?php echo get_option('mokis_social_data_left_home'); ?>px; margin-top: <?php echo get_option('mokis_social_data_top_home'); ?>px;">
 <div style="width:68px;margin: auto; padding:0 0 5px 0; text-align:center;">
