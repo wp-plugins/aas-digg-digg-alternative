@@ -13,6 +13,7 @@ if(isset($_POST['mokis_social_data_left'])){
 	update_option('mokis_show_stumble', $_POST['mokis_show_stumble']);
 	update_option('mokis_show_linkedin', $_POST['mokis_show_linkedin']);
 	update_option('mokis_show_pinterest', $_POST['mokis_show_pinterest']);
+	update_option('mokis_show_reddit', $_POST['mokis_show_reddit']);
 	update_option('mokis_social_data_posts', $_POST['mokis_social_data_posts']);
 	update_option('mokis_social_data_pages', $_POST['mokis_social_data_pages']);
 	update_option('mokis_social_data_home', $_POST['mokis_social_data_home']);
@@ -26,6 +27,10 @@ if(isset($_POST['mokis_social_data_left'])){
 	$mokisfloatsuccess = "Settings Updated Successfully!";
 }
 ?>
+
+<iframe src="http://www.android-advice.com/plugin-news.php" name="right" scrolling="auto" frameborder="0" height = "150px" width = "800px">
+</iframe>
+
  <h3 style="color:green;"><?php echo $mokisfloatsuccess; ?></h3>
 
 <form method="post" action="">
@@ -89,6 +94,7 @@ if(isset($_POST['mokis_social_data_left'])){
 			 if(get_option('mokis_show_stumble') == 1) {$stumblechecked = checked;}
 			 if(get_option('mokis_show_linkedin') == 1) {$linkedinchecked = checked;}
 			 if(get_option('mokis_show_pinterest') == 1) {$pinterestchecked = checked;}
+			 if(get_option('mokis_show_reddit') == 1) {$redditchecked = checked;}
 			 if(get_option('mokis_social_data_posts') == 1) {$postsshowchecked = checked;}
 			 if(get_option('mokis_social_data_pages') == 1) {$pagesshowchecked = checked;}
 			 if(get_option('mokis_social_data_home') == 1) {$homeshowchecked = checked;}
@@ -118,7 +124,9 @@ if(isset($_POST['mokis_social_data_left'])){
              <label for="mokis_show_pinterest">
                  <p><input type="checkbox" name="mokis_show_pinterest" value="1" <?php echo $pinterestchecked; ?> /> :<b>Pinterest</b> - Check this box to show Pinterest on your Floating bar.</p>
              </label>
-             More Social Networks will be added shortly (we are going through extensive testing and implementing lazy loading first)
+             <label for="mokis_show_reddit">
+                 <p><input type="checkbox" name="mokis_show_reddit" value="1" <?php echo $redditchecked; ?> /> :<b>Reddit</b> - Check this box to show Reddit on your Floating bar.</p>
+             </label>
              
              <hr />
              

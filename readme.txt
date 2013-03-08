@@ -1,8 +1,8 @@
 === AA's Digg Digg Alternative ===
-Tags: social, share, dig, Facebook, twitter, stumble, gplus, google plus, social sharing, toolbar, floating bar, social plugin, social share, google+, dig dig, stumble upon, twitter share, Facebook like, twitter follow, dig dig, social floater, static social sharing, simple dig digg
+Tags: social, share, dig, Facebook, twitter, stumble, gplus, google plus, social sharing, toolbar, floating bar, social plugin, social share, google+, dig dig, stumble upon, twitter share, Facebook like, twitter follow, digg digg, social floater, static social sharing, simple digg digg
 Requires at least: 3.0.1
 Tested up to: 3.5
-Stable tag: 1.4.1
+Stable tag: 1.4.2
 Contributors: Brandon_Orndorff
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -36,13 +36,17 @@ If you have questions about the toolbar, bug reports, or feature requests (like 
 
 If you go to the settings for the toolbar "settings -> dig digg alternative" you will see location settings.  You need to change those numbers to move the toolbar around. (i.e. changing the first number from 500 to 550 will move it further left by 50 pixels, changing the second number from 50 to 60 will move it down 10 pixels)
 
-If you have any questions please visit [Android Advice Plugin Page](http://www.android-advice.com/2012/faster-seo-friendly-digg-digg-alternative-wordpress-plugin/ "Digg Digg Alternative") and leave them in the comments.
+If you have any questions please visit the [Digg Digg Alternative Plugin Page](http://www.android-advice.com/2012/faster-seo-friendly-digg-digg-alternative-wordpress-plugin/ "Digg Digg Alternative") and leave them in the comments.
 
 == Demo ==
 
 Visit Android Advice and view a post to see the Toolbar in action - [Android Advice Plugin Homepage](http://www.android-advice.com/ "Digg Digg Alternative")
 
 == Changelog ==
+
+= 1.4.2 =
+* Added Reddit to the Social Button List.
+* Added a News section to the Admin Area (does not effect your website at all)
 
 = 1.4.1 =
 * Minor update to allow those with static homepages to show the bar on the homepage without having to activate it on all pages.

@@ -29,6 +29,7 @@ class Mokis_Digg_Alt_Controller {
 		add_option("mokis_show_stumble", '', '', 'yes');
 		add_option("mokis_show_linkedin", '', '', 'yes');
 		add_option("mokis_show_pinterest", '', '', 'yes');
+		add_option("mokis_show_reddit", '1', '', 'yes');
 		add_option("mokis_social_data_posts", '1', '', 'yes');
 		add_option("mokis_social_data_pages", '', '', 'yes');
 		add_option("mokis_social_data_home", '', '', 'yes');
@@ -46,6 +47,7 @@ class Mokis_Digg_Alt_Controller {
 		add_option("mokis_social_bgcolor", '#FFFFFF', '', 'yes');
 		add_option("mokis_social_border_color", '#999999', '', 'yes');
 		add_option("mokis_social_static_homepage", '-1', '', 'yes');
+		add_option("mokis_show_reddit", '1', '', 'yes');
 	}
 
 	function deactivate() {
@@ -62,6 +64,7 @@ class Mokis_Digg_Alt_Controller {
 		delete_option('mokis_show_stumble');
 		delete_option('mokis_show_linkedin');
 		delete_option('mokis_show_pinterest');
+		delete_option('mokis_show_reddit');
 		delete_option('mokis_social_data_posts');
 		delete_option('mokis_social_data_pages');
 		delete_option('mokis_social_data_home');
@@ -109,6 +112,7 @@ function moki_add_social_content($content) {
 </script></span><?php } ?>
 <?php if(get_option('mokis_show_linkedin') == 1){ ?><span style="padding-top:5px; display:block;"><script src="//platform.linkedin.com/in.js" type="text/javascript"></script><script type="IN/Share" data-counter="top"></script></span><?php } ?>
 <?php if(get_option('mokis_show_pinterest') == 1){ ?><span style="padding-top:5px; display:block;"><br /><a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php if(function_exists('the_post_thumbnail')) echo wp_get_attachment_url(get_post_thumbnail_id()); ?>&description=<?php echo get_the_title(); ?>" class="pin-it-button" count-layout="vertical">Pin It</a><script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script></span><?php } ?>
+<?php if(get_option('mokis_show_reddit') == 1){ ?><span style="padding-top:5px; display:block;"><script type="text/javascript" src="http://www.reddit.com/static/button/button2.js"></script></span><?php } ?>
 <?php if(get_option('mokis_social_data_credit') == 1){ ?><span style="line-height:10px;padding-top:5px; display:block;"><a href="http://www.android-advice.com" target="_blank" title="Android News, Tutorials, how to's, applications'" style="font-size:9px;">Powered By:<br />Android Advice</a></span><?php } ?>
 </div>
 </div>
@@ -146,6 +150,7 @@ function moki_add_social_content($content) {
 </script></span><?php } ?>
 <?php if(get_option('mokis_show_linkedin') == 1){ ?><span style="padding-top:5px; display:block;"><script src="//platform.linkedin.com/in.js" type="text/javascript"></script><script type="IN/Share" data-counter="top"></script></span><?php } ?>
 <?php if(get_option('mokis_show_pinterest') == 1){ ?><span style="padding-top:5px; display:block;"><br /><a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php if(function_exists('the_post_thumbnail')) echo wp_get_attachment_url(get_post_thumbnail_id()); ?>&description=<?php echo get_the_title(); ?>" class="pin-it-button" count-layout="vertical">Pin It</a><script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script></span><?php } ?>
+<?php if(get_option('mokis_show_reddit') == 1){ ?><span style="padding-top:5px; display:block;"><script type="text/javascript" src="http://www.reddit.com/static/button/button2.js"></script></span><?php } ?>
 <?php if(get_option('mokis_social_data_credit') == 1){ ?><span style="line-height:10px;padding-top:5px; display:block;"><a href="http://www.android-advice.com" target="_blank" title="Android News, Tutorials, how to's, applications'" style="font-size:9px;">Powered By:<br />Android Advice</a></span><?php } ?>
 </div>
 </div>
@@ -181,6 +186,7 @@ function moki_add_social_content($content) {
 </script></span><?php } ?>
 <?php if(get_option('mokis_show_linkedin') == 1){ ?><span style="padding-top:5px; display:block;"><script src="//platform.linkedin.com/in.js" type="text/javascript"></script><script type="IN/Share" data-counter="top"></script></span><?php } ?>
 <?php if(get_option('mokis_show_pinterest') == 1){ ?><span style="padding-top:5px; display:block;"><br /><a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php if(function_exists('the_post_thumbnail')) echo wp_get_attachment_url(get_post_thumbnail_id()); ?>&description=<?php echo get_the_title(); ?>" class="pin-it-button" count-layout="vertical">Pin It</a><script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script></span><?php } ?>
+<?php if(get_option('mokis_show_reddit') == 1){ ?><span style="padding-top:5px; display:block;"><script type="text/javascript" src="http://www.reddit.com/static/button/button2.js"></script></span><?php } ?>
 <?php if(get_option('mokis_social_data_credit') == 1){ ?><span style="line-height:10px;padding-top:5px; display:block;"><a href="http://www.android-advice.com" target="_blank" title="Android News, Tutorials, how to's, applications'" style="font-size:9px;">Powered By:<br />Android Advice</a></span><?php } ?>
 </div>
 </div>
