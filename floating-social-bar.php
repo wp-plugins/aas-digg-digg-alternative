@@ -3,7 +3,7 @@
 Plugin Name: AA's Digg Digg Alternative
 Plugin URI: http://www.android-advice.com/2012/faster-seo-friendly-digg-digg-alternative-wordpress-plugin/
 Description: Floating social bar for those that don't want to use the content heavy and slow Digg Digg bar.  This bar only has the code required to create the floating bar with sharing to increase page speed and less code.
-Version: 1.4.1
+Version: 1.4.2
 Author: Brandon Orndorff
 Author URI: http://www.android-advice.com
 License: GPL2
