@@ -18,12 +18,20 @@ The AA Digg Digg Alternative is a floating toolbar for your Wordpress website th
 
 We ran speed tests using the Digg Digg social plugin and our own and every website it was tested on came up with better results using our Digg Digg alternative than the Digg Digg bar itself.
 
-Benefits of Our Toolbar over Digg Digg:
+= Benefits of Our Toolbar over Digg Digg: =
 	* Faster load time
 	* Cleaner code
 	* Substantially less code
 	* Easy to customize
 	* Less settings to run through to get it working
+
+= You can now social share with: =
+1. Facebook
+2. Twitter
+3. Pinterest
+4. G+
+5. LinkedIn
+6. Reddit
 
 If you have questions about the toolbar, bug reports, or feature requests (like other sharing services) we will hear you out and make changes hopefully quickly.  We will be adding other networks although wanted to release this for testing first.
 
