@@ -1,5 +1,5 @@
 === AA's Digg Digg Alternative ===
-Tags: social, share, digg, Facebook, twitter, stumbleupon, gplus, google plus, social sharing, toolbar, floating bar, social plugin, social share, google+, digg digg, stumble upon, twitter share, Facebook like, twitter follow, social floater, static social sharing, simple digg digg
+Tags: social, share, digg, Facebook, twitter, stumbleupon, gplus, google plus, social sharing, toolbar, floating bar, social plugin, social share, google+, digg digg, stumble upon, twitter share, Facebook like, twitter follow, social floater, static social sharing, simple digg digg, twitter, addthis
 Requires at least: 3.0.1
 Tested up to: 3.5.2
 Stable tag: 1.4.5
