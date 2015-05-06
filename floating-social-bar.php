@@ -4,7 +4,7 @@ Plugin Name: Social Share Bar (Digg Digg Alternative)
 Plugin URI: http://www.brandonorndorff.com/wordpress/plugins/aas-digg-digg-alternative-wordpress-plugin/
 Description: Floating social bar for those that don't want to use the content heavy and slow Digg Digg bar.  This bar only has the code required to create the floating bar with sharing to increase page speed and less code.
 Version: 1.4.5
-Author: SumoMe, Brandon Orndorff
+Author: chadattayac, Brandon Orndorff
 Author URI: http://www.SumoMe.com
 License: GPL2
 */
