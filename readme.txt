@@ -1,13 +1,13 @@
-=== AA's Digg Digg Alternative ===
+=== Digg Digg Alternative (Social Share bar) ===
 Tags: social, share, digg, Facebook, twitter, stumbleupon, gplus, google plus, social sharing, toolbar, floating bar, social plugin, social share, google+, digg digg, stumble upon, twitter share, Facebook like, twitter follow, social floater, static social sharing, simple digg digg, twitter, addthis
 Requires at least: 3.0.1
-Tested up to: 3.5.2
+Tested up to: 4.2
 Stable tag: 1.4.5
 Contributors: Brandon_Orndorff, SumoMe
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Digg Digg Alternative that uses less code and loads much faster.  Floating toolbar that is SEO friendly and customizable.
+Digg Digg Alternative is a fast loading social share bar. Floating toolbar that is SEO friendly and customizable.
 
 == Description ==
 
@@ -46,6 +46,11 @@ If you have any questions please visit the [Digg Digg Alternative Plugin Page](h
 == Demo ==
 
 Visit Android Advice and view a post to see the Toolbar in action - [Android Advice Plugin Homepage](http://www.android-advice.com/ "Digg Digg Alternative")
+
+== Screenshots ==
+
+1. Live example
+2. Customizable Settings
 
 == Changelog ==
 
