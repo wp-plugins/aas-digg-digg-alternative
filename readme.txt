@@ -1,15 +1,18 @@
 === AA's Digg Digg Alternative ===
-Tags: social, share, digg, Facebook, twitter, stumble, gplus, google plus, social sharing, toolbar, floating bar, social plugin, social share, google+, digg digg, stumble upon, twitter share, Facebook like, twitter follow, social floater, static social sharing, simple digg digg
+Tags: social, share, digg, Facebook, twitter, stumbleupon, gplus, google plus, social sharing, toolbar, floating bar, social plugin, social share, google+, digg digg, stumble upon, twitter share, Facebook like, twitter follow, social floater, static social sharing, simple digg digg
 Requires at least: 3.0.1
 Tested up to: 3.5.2
 Stable tag: 1.4.5
-Contributors: Brandon_Orndorff
+Contributors: Brandon_Orndorff, SumoMe
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Digg Digg Alternative that uses less code and loads much faster.  Floating toolbar that is SEO friendly and customizable.
 
 == Description ==
+
+[**Get super optimized sharing tools with the SumoMe plugin**](https://wordpress.org/plugins/sumome/)
+
 
 The AA Digg Digg Alternative is a floating toolbar for your Wordpress website that is lightweight and clean.  The reason for this plugin is Digg Digg was causing many speed issues with our website "Android Advice & Tutorials" so we decided to create our own.  After doing so we received requests by others for our toolbar.  The result is a plugin available to all.
 
@@ -23,6 +26,8 @@ Benefits of Our Toolbar over Digg Digg:
 	* Less settings to run through to get it working
 
 If you have questions about the toolbar, bug reports, or feature requests (like other sharing services) we will hear you out and make changes hopefully quickly.  We will be adding other networks although wanted to release this for testing first.
+
+[**Get super optimized sharing tools with the SumoMe plugin**](https://wordpress.org/plugins/sumome/)
 
 == Installation ==
 
