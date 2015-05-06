@@ -27,8 +27,7 @@ if(isset($_POST['mokis_social_data_left'])){
 }
 ?>
 
-<iframe src="http://www.android-advice.com/plugin-news.php" name="right" scrolling="auto" frameborder="0" height = "150px" width = "800px">
-</iframe>
+<h3><a target="_blank" href="http://wordpress.org/plugins/sumome/">Click here</a> to upgrade Share with SumoMe</h3>
 
 <h3 style="color:green;"><?php echo $mokisfloatsuccess; ?></h3>
 
@@ -148,7 +147,7 @@ if(isset($_POST['mokis_social_data_left'])){
              </label>
              
              <hr /><br />
-             <a href="http://www.brandonorndorff.com/wordpress/plugins/aas-digg-digg-alternative-wordpress-plugin/" title="Digg Digg Alternative Social Toolbar" target="_blank">AA's Social Toolbar</a> - This is where you can request features, report bugs, or just talk about the plugin in general.
+             <a target="_blank" href="http://wordpress.org/plugins/sumome" title="Digg Digg Alternative Social Toolbar" target="_blank">SumoMe Social Share Pro</a> - Upgrade to a Share plugin that is insanely good.
          </td>
 	   </tr>
 	</tbody>
