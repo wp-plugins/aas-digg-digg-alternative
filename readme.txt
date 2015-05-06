@@ -2,7 +2,7 @@
 Tags: social, share, digg, Facebook, twitter, stumbleupon, gplus, google plus, social sharing, toolbar, floating bar, social plugin, social share, google+, digg digg, stumble upon, twitter share, Facebook like, twitter follow, social floater, static social sharing, simple digg digg, twitter, addthis, reddit
 Requires at least: 3.0.1
 Tested up to: 4.2
-Stable tag: 1.4.5
+Stable tag: 1.4.6
 Contributors: Brandon_Orndorff, chadattayac
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -61,6 +61,10 @@ Visit Android Advice and view a post to see the Toolbar in action - [Android Adv
 2. Customizable Settings
 
 == Changelog ==
+
+= 1.4.6 =
+* Cleaned up Readme page and general updates
+
 
 = 1.4.5 =
 * Made a few minor changes to fix some Templates errors
