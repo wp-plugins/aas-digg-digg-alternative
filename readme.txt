@@ -11,7 +11,7 @@ Digg Digg Alternative is a fast loading social share bar. Floating toolbar that 
 
 == Description ==
 
-[**Get super optimized sharing tools with the SumoMe plugin**](http://bit.ly/1zqOXPs)
+[**Get super optimized sharing tools with the Share plugin**](http://bit.ly/1zqOXPs)
 
 
 The AA Digg Digg Alternative is a floating toolbar for your Wordpress website that is lightweight and clean.  The reason for this plugin is Digg Digg was causing many speed issues with our website "Android Advice & Tutorials" so we decided to create our own.  After doing so we received requests by others for our toolbar.  The result is a plugin available to all.
@@ -35,7 +35,7 @@ We ran speed tests using the Digg Digg social plugin and our own and every websi
 
 If you have questions about the toolbar, bug reports, or feature requests (like other sharing services) we will hear you out and make changes hopefully quickly.  We will be adding other networks although wanted to release this for testing first.
 
-[**Get super optimized sharing tools with the SumoMe plugin**](http://bit.ly/1zqOXPs)
+[**Get super optimized sharing tools with the Share plugin**](http://bit.ly/1zqOXPs)
 
 == Installation ==
 
