@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: AA's Digg Digg Alternative
+Plugin Name: Social Share Bar (Digg Digg Alternative)
 Plugin URI: http://www.brandonorndorff.com/wordpress/plugins/aas-digg-digg-alternative-wordpress-plugin/
 Description: Floating social bar for those that don't want to use the content heavy and slow Digg Digg bar.  This bar only has the code required to create the floating bar with sharing to increase page speed and less code.
 Version: 1.4.5
@@ -91,7 +91,9 @@ function moki_add_social_content($content) {
 <?php if(get_option('mokis_show_googleplus') == 1){ ?><span style="padding-top:5px; display:block;"><script type='text/javascript' src='https://apis.google.com/js/plusone.js'></script><g:plusone size='tall'></g:plusone></span><?php } ?>
 <?php if(get_option('mokis_show_digg') == 1){ ?><span style="padding-top:5px; display:block;"><script type='text/javascript'>(function() {var s = document.createElement('SCRIPT'), s1 = document.getElementsByTagName('SCRIPT')[0];s.type = 'text/javascript';s.async = true;s.src = 'http://widgets.digg.com/buttons.js';s1.parentNode.insertBefore(s, s1);})();</script> <a class='DiggThisButton DiggMedium' href='http://digg.com/submit'></a></span><?php } ?>
 <?php if(get_option('mokis_show_twitter') == 1){ ?><span style="padding-top:5px; display:block;"><a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical"></a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></span><?php } ?>
-<?php if(get_option('mokis_show_facebook') == 1){ ?><span style="padding-top:5px; display:block;"><div id="fb-root"></div>
+<?php if(get_option('mokis_show_facebook') == 1){ ?><span style="padding-top:5px; display:block;"><div id="fb-root">
+<a style="padding-left:15px" href="http://bit.ly/1EQF6HG"><img src="http://i.imgur.com/WP1JzbU.png"></a>
+</div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;

@@ -36,12 +36,12 @@ if(isset($_POST['mokis_social_data_left'])){
 <table class="widefat">
 	<thead>
 	&nbsp;&nbsp;&nbsp;<tr>
-		 <th><input type="submit" name="submit" value="<?php esc_attr_e('Save Settings'); ?>" class="button-primary" style="padding:8px;" /></th>
+		 <th><input type="submit" name="submit" value="<?php esc_attr_e('Save Settings'); ?>" style="padding: 0px 8;" class="button-primary" style="padding:8px;" /></th>
 	   </tr>
 	</thead>
 	<tfoot>
 	   <tr>
-		 <th><input type="submit" name="submit" value="<?php esc_attr_e('Save Settings'); ?>" class="button-primary" style="padding:8px;" /></th>
+		 <th><input type="submit" name="submit" value="<?php esc_attr_e('Save Settings'); ?>" style="padding: 0px 8;" class="button-primary" style="padding:8px;" /></th>
 	   </tr>
 	</tfoot>
 	<tbody>
