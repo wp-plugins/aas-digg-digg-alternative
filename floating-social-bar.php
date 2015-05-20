@@ -113,7 +113,7 @@ function moki_add_social_content($content) {
 <?php if(get_option('mokis_show_pinterest') == 1){ ?><span style="padding-top:5px; display:block;"><br /><a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php if(function_exists('the_post_thumbnail')) echo wp_get_attachment_url(get_post_thumbnail_id()); ?>&description=<?php echo get_the_title(); ?>" class="pin-it-button" count-layout="vertical">Pin It</a><script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script></span><?php } ?>
 <?php if(get_option('mokis_show_reddit') == 1){ ?><span style="padding-top:5px; display:block;"><script type="text/javascript" src="http://www.reddit.com/static/button/button2.js"></script></span><?php } ?>
 </div>
-<a style="padding-left:15px" target="_blank" rel="nofollow" href="http://bit.ly/1EQF6HG"><img src="http://i.imgur.com/SFZWTHx.png"></a>
+
 </div>
 <?php
 } //end if is_single
